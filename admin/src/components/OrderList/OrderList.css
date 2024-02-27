@@ -1,0 +1,30 @@
+
+
+.container-fluid{
+  background: white;
+  margin: 35px 25px !important;
+  padding: 20px 30px !important;
+}
+
+.order-table>thead>tr>th{
+  background-color: rgb(241, 115, 98);;
+  color: white;
+  padding: 10px 5px;
+}
+.order-table>tbody>tr>td{
+  padding: 8px 5px;
+}
+
+.product-table>tbody>tr>td{
+  padding: 8px 5px;
+}
+/* 
+.modal{
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.border-dashed{
+  border: 1px dashed gray;
+  border-radius: 5px;
+  padding: 2px 1px;
+} */

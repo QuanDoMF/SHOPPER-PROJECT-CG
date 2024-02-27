@@ -1,0 +1,38 @@
+.cart-table-wrapper {
+  max-height: 80vh; 
+  overflow-y: auto; /
+}
+.cart-table {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+  table-layout: fixed; /* Đảm bảo bảng có kích thước cố định */
+}
+
+.cart-table th, .cart-table td {
+  vertical-align: middle; /* Căn giữa dọc cho nội dung trong ô */
+  padding: 10px; /* Tăng padding để tạo ra khoảng trống xung quanh nội dung */
+}
+
+.product-image {
+  max-width: 100%; /* Đảm bảo ảnh sản phẩm không vượt quá kích thước ô */
+}
+
+.listproduct-remove-icon {
+  cursor: pointer; /* Biểu tượng Remove có thể click */
+}
+
+/* Độ rộng tối thiểu cho các cột */
+.cart-table th, .cart-table td {
+  min-width: 100px; /* Độ rộng tối thiểu của mỗi cột */
+}
+
+
+.cart-table>tbody>tr>td {
+  padding: 20px 0px;
+  vertical-align: middle;
+}
+
+.product-image {
+  width: 90%;
+  margin-right: 4px;
+  filter: alpha(opacity=20)
+}

@@ -1,0 +1,65 @@
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 20px;
+  min-width: 250px;
+  height: 100vh;
+  background: white; 
+}
+.sidebar-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 20px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #f6f6f6;
+  gap: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+.sidebar-item img{
+  width: 40px;
+  
+}
+.sidebar-item p {
+  color: #333;
+  font-weight: 500;
+  margin-top: 14px;
+}
+.cart-table-wrapper {
+  max-height: 100vh;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung vượt quá chiều cao */
+  scrollbar-width: thin; /* Chiều rộng của thanh cuộn */
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent; /* Màu sắc của thanh cuộn */
+}
+
+/* Thiết lập kiểu cho thanh cuộn trên Chrome, Edge và Safari */
+.cart-table-wrapper::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng của thanh cuộn */
+}
+
+.cart-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5); /* Màu của thanh cuộn */
+  border-radius: 4px; /* Bo tròn góc của thanh cuộn */
+}
+
+.cart-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.7); /* Màu của thanh cuộn khi di chuột qua */
+}
+
+@media(max-width: 800px){
+  .sidebar{
+    padding: 30px 0;
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    justify-content: center;
+  }
+  .sidebar-item{
+    margin: 0;
+  }
+}
