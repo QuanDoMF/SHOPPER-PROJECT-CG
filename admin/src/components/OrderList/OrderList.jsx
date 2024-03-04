@@ -28,10 +28,10 @@ const OrderList = () => {
             <thead>
               <tr>
                 <th className="text-end align-middle">Order Date</th>
-                <th className="text-end align-middle">Total Products</th>
-                <th className="text-end align-middle">Subtotal</th>
-                <th className="text-end align-middle">Shipping</th>
-                <th className="text-end align-middle">Total Amount</th>
+                <th className="text-center align-middle">Total Products</th>
+                <th className="text-center align-middle">Subtotal</th>
+                <th className="text-center align-middle">Shipping</th>
+                <th className="text-center align-middle">Total Amount</th>
                 <th className="text-end align-middle">Status</th>
                 <th className="text-center align-middle">Customer Name</th>
                 <th className="text-end align-middle">Actions</th>
@@ -42,16 +42,16 @@ const OrderList = () => {
                 orderList?.map((order) => (
                   <tr key={order.orderId}>
                     <td className="text-end align-middle">{dayjs(order.orderInfo.orderDate).format('MMM DD YYYY')}</td>
-                    <td className="text-end align-middle">
+                    <td className="text-center align-middle">
                       {order.orderDetails.length}
                     </td>
-                    <td className="text-end align-middle">
+                    <td className="text-center align-midd  le">
                       ${order?.orderInfo?.subTotal}
                     </td>
-                    <td className="text-end align-middle">
+                    <td className="text-center align-middle">
                       {`${order?.orderInfo?.shipping ? '$' + order?.orderInfo?.shipping : 'Free'}`}
                     </td>
-                    <td className="text-end align-middle">
+                    <td className="text-center align-middle">
                       ${order?.orderInfo?.total}
                     </td>
                     <td className="text-end align-middle">
