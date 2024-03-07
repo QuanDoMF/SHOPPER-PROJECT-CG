@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { API_ROOT } from "../../utils/constants";
 const schema = yup.object({
   name: yup.string().required('Product title is required'),
   new_price: yup.string().required('Offer Price is required'),
@@ -30,11 +31,11 @@ function AddProduct() {
     let formData = new FormData()
     formData.append('product', image)
     try {
-      let responseData = await axios.post('http://localhost:4000/upload', formData)
+      let responseData = await axios.post(`${API_ROOT}/upload`, formData)
       if (responseData.data.success) {
         product.image = responseData.data.image_url
-        console.log("product", product)
-        let resonseFormData = await axios.post('http://localhost:4000/addproduct', product)
+        // console.log("product", product)
+        let resonseFormData = await axios.post(`${API_ROOT}/addproduct`, product)
         toast.success('Product Added')
         reset()
         setImage(false)

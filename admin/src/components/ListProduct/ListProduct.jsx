@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ListProduct.css";
 import cross_icon from "../../assets/cross_icon.png";
 import Swal from "sweetalert2";
-
+import { API_ROOT } from "../../utils/constants";
 function ListProduct() {
 
   const [allproducts, setAllProducts] = useState([]);
@@ -14,7 +14,7 @@ function ListProduct() {
     date: 'null'
   })
   const fetchInfo = async () => {
-    await fetch("http://localhost:4000/allproduct")
+    await fetch(`${API_ROOT}/allproduct`)
       .then((res) => res.json())
       .then((data) => {
         setAllProducts(data.data);
@@ -24,7 +24,7 @@ function ListProduct() {
     fetchInfo();
   }, []);
 
-  console.log('filters', filters)
+  // console.log('filters', filters)
   // console.log('allproduct', allproducts)
   const remainProducts = () => {
     if (allproducts) {
@@ -87,7 +87,7 @@ function ListProduct() {
       confirmButtonText: "Confirm",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await fetch("http://localhost:4000/removeproduct", {
+        await fetch(`${API_ROOT}/removeproduct`, {
           method: "POST",
           headers: {
             Accept: "application/json",

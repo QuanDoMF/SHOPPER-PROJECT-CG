@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './OrderList.css';
 import { MdReadMore } from "react-icons/md";
 import dayjs from 'dayjs';
-
+import { API_ROOT } from '../../utils/constants';
 const OrderList = () => {
   const [selectOrder, setSelectOrder] = useState(null)
 
   const [orderList, setOrderList] = useState([])
   const fetchOrderList = async () => {
-    await fetch('http://localhost:4000/orderlist')
+    await fetch(`${API_ROOT}/orderlist`)
       .then((res) => res.json())
       .then((data) => {
         setOrderList(data)
